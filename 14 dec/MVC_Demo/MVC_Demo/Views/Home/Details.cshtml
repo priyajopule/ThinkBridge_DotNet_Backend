@@ -1,0 +1,59 @@
+﻿@page
+@model MVC_Demo.Views.Home.DetailsModel
+@{}
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+@using (Html.BeginForm())
+{
+<h2>Details</h2>
+   <div class="container">
+       <h3>thank you</h3>
+   <table class="table">
+
+   <tr>
+       <td>First Name</td>
+        <td>@ViewBag.firstname</td>
+   </tr>
+
+   <tr>
+       <td>Last Name</td>
+        <td>@ViewBag.lastname</td>
+   </tr>
+
+
+   <tr>
+         <td>Mobile Number</td>
+         <td>@ViewBag.phone</td>
+        
+   </tr>
+
+
+   <tr>
+           <td>Gender</td>
+         <td>@ViewBag.gender</td>
+   </tr>
+
+
+   <tr>
+           <td>Hobbies</td>
+         <td> 
+             @foreach(var item in ViewBag.hobbies)
+                {
+                    <p>@item</p>
+                }
+
+         </td>
+   </tr>
+
+   <tr>
+       <td>Participate in servey</td>
+   </tr>
+
+   </table>
+    </div>
+
+}

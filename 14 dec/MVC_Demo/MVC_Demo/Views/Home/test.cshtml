@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "test";
+}
+
+
+<h1>MVC test demo </h1>
+@ViewData["name"]
+
+@ViewBag.Address
+
+
+<ol>
+    @foreach (var item in ViewBag.NameList)
+   {
+       <li>
+           @item
+       </li>
+   }
+</ol>
+
+
+
+<tr>
+    @foreach (var item in ViewBag.ProductList)
+    {
+       <td>
+           @item
+       </td>
+    }
+</tr>

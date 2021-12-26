@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TBDemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'TBDemo.dbo.counsellor' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="counsellor">
+          <Property Name="stuID" Type="int" />
+          <Property Name="stu_Name" Type="varchar" MaxLength="250" />
+          <Property Name="course" Type="varchar" MaxLength="250" />
+          <Property Name="followUp" Type="date" />
+          <Property Name="stu_response" Type="varchar" MaxLength="250" />
+        </EntityType>-->
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="EName" Type="varchar" MaxLength="250" />
+          <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="DeptNo" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee1">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="int" Nullable="false" />
+          <Property Name="EmpName" Type="varchar" MaxLength="250" />
+          <Property Name="BSalary" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="hra" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ta" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="pf" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="netpaid" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="DeptID" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee2">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="int" Nullable="false" />
+          <Property Name="EmpName" Type="varchar" MaxLength="250" />
+          <Property Name="BSalary" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="hra" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ta" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="netpaid" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="DeptID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'TBDemo.dbo.enquiry' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="enquiry">
+          <Property Name="username" Type="varchar" MaxLength="250" />
+          <Property Name="mobno" Type="int" />
+          <Property Name="address" Type="varchar" MaxLength="250" />
+          <Property Name="email_id" Type="varchar" MaxLength="250" />
+          <Property Name="course_choice" Type="varchar" MaxLength="250" />
+        </EntityType>-->
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="int" Nullable="false" />
+          <Property Name="Pname" Type="varchar" MaxLength="250" />
+          <Property Name="PPrice" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="TBDemoModelStoreContainer">
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee1" EntityType="Self.Employee1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee2" EntityType="Self.Employee2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TBDemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="EName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DeptNo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Employee1">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="Int32" Nullable="false" />
+          <Property Name="EmpName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="BSalary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="hra" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ta" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="pf" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="netpaid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DeptID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Employee2">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="Int32" Nullable="false" />
+          <Property Name="EmpName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="BSalary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="hra" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ta" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="netpaid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DeptID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="Int32" Nullable="false" />
+          <Property Name="Pname" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PPrice" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="TBDemoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Employee1" EntityType="Self.Employee1" />
+          <EntitySet Name="Employee2" EntityType="Self.Employee2" />
+          <EntitySet Name="products" EntityType="Self.product" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TBDemoModelStoreContainer" CdmEntityContainer="TBDemoEntities">
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="TBDemoModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EName" ColumnName="EName" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="DeptNo" ColumnName="DeptNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee1">
+            <EntityTypeMapping TypeName="TBDemoModel.Employee1">
+              <MappingFragment StoreEntitySet="Employee1">
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="BSalary" ColumnName="BSalary" />
+                <ScalarProperty Name="hra" ColumnName="hra" />
+                <ScalarProperty Name="ta" ColumnName="ta" />
+                <ScalarProperty Name="pf" ColumnName="pf" />
+                <ScalarProperty Name="netpaid" ColumnName="netpaid" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee2">
+            <EntityTypeMapping TypeName="TBDemoModel.Employee2">
+              <MappingFragment StoreEntitySet="Employee2">
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="BSalary" ColumnName="BSalary" />
+                <ScalarProperty Name="hra" ColumnName="hra" />
+                <ScalarProperty Name="ta" ColumnName="ta" />
+                <ScalarProperty Name="netpaid" ColumnName="netpaid" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="TBDemoModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="Pname" ColumnName="Pname" />
+                <ScalarProperty Name="PPrice" ColumnName="PPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,39 @@
+class Program
+    {
+        static async Task<int> Test1()
+        {
+            int sum = 0;
+            await Task.Run(() => {
+                for (int i = 0; i < 40; i++)
+                {
+                    Console.WriteLine("in test1 method");
+                    //Task.Delay(100).Wait();
+                    sum += i;
+                }
+            });
+            return sum;
+          
+        }
+        //static async Task<int> Test3()
+        //{
+        //    int a = 1;
+        //    return a;
+        //}
+        static void Test2(int sum)
+        {
+            Console.WriteLine(sum);
+        }
+        static async Task callMethod()
+        {
+            Task<int> task = Test1();
+            int sum = await task;
+            Test2(sum);
+        }
+        static void Main(string[] args)
+        {
+            callMethod();
+            Console.ReadKey();
+        }
+       
+  
+    }
